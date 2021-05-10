@@ -1,0 +1,127 @@
+
+@mixin logo-size($width){
+    width: $width;
+    height: $width * 0.332;
+}
+
+@mixin classify(){
+    .classify{
+        span{
+            text-transform: capitalize;
+            color: var(--text-color-light);
+            font-weight: bold;
+            font-size: 11px;
+            line-height: 1.2em;
+        }
+
+        h2{
+            font-size: 18px;
+            font-weight: bold;
+        }
+    }
+
+    .classify.large{
+        span{
+            font-size: 13px;
+        }
+
+        h2{
+            font-size: 25px;
+        }
+    }
+}
+
+@mixin crypto-styles(){
+    .ccc-coin-container{
+        margin-right: 5px !important;
+        margin-bottom: 15px !important;
+
+        .priceName{
+            font-size: 17px !important ;
+        }
+
+        .priceVame{
+            font-size: 17px !important;
+        }
+    }
+
+    .ccc-histo-week{
+        @include mobile-576{
+            width: 350px;
+        }
+
+        @include mobile-375{
+            width: 320px;
+        }
+
+        @include mobile-360{
+            width: 300px;
+        }
+
+        > div{
+            border: 0 !important;
+
+            .histoRow{
+                padding-left: 0;
+                padding-right: 0;
+            }
+
+            @include mobile-576{
+                .histoRow{
+                    font-size: 14px;
+                }
+            }
+        }
+    }
+}
+
+
+
+
+@mixin scroller(){
+    .scroller, .scroller-visible{
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: var(--theme-background) var(--theme-background) ;
+    }
+
+    .scroller:hover{
+        scrollbar-color: var(--pri-grey) var(--theme-background);
+    }
+
+    .scroller-visible{
+        scrollbar-color: var(--pri-grey-tint) var(--pri-grey-tint);
+    }
+
+    .scroller-visible:hover{
+        scrollbar-color: var(--pri-grey) var(--pri-grey-tint);
+    }
+
+    .scroller::-webkit-scrollbar {
+        width: 5px;
+    }
+
+    .scroller::-webkit-scrollbar-track {
+    background-color: var(--theme-background);
+    }
+
+    .scroller::-webkit-scrollbar-thumb {
+    background-color:  var(--theme-background);
+    }
+
+    .scroller:hover::-webkit-scrollbar-thumb{
+    background-color:  var(--pri-grey);
+    }
+
+    .scroller-visible::-webkit-scrollbar-track {
+    background-color: var(--pri-grey-tint);
+    }
+
+    .scroller-visble::-webkit-scrollbar-thumb {
+    background-color:  var(--pri-grey-tint);
+    }
+
+    .scroller-visible:hover::-webkit-scrollbar-thumb{
+    background-color:  var(--pri-grey);
+    }
+}

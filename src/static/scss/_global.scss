@@ -1,0 +1,175 @@
+
+@font-face {
+    font-family: 'Averta Demo PE';
+    src: url('AvertaDemoPE-Regular.eot');
+    src: local('Averta Demo PE Regular'), local('AvertaDemoPE-Regular'),
+        url('../fonts/averta/AvertaDemoPE-Regular.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/averta/AvertaDemoPE-Regular.woff2') format('woff2'),
+        url('../fonts/averta/AvertaDemoPE-Regular.woff') format('woff'),
+        url('../fonts/averta/AvertaDemoPE-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Averta Demo PE';
+    src: url('AvertaDemoPE-ExtraboldItalic.eot');
+    src: local('Averta Demo PE Extrabold Italic'), local('AvertaDemoPE-ExtraboldItalic'),
+        url('../fonts/averta/AvertaDemoPE-ExtraboldItalic.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/averta/AvertaDemoPE-ExtraboldItalic.woff2') format('woff2'),
+        url('../fonts/averta/AvertaDemoPE-ExtraboldItalic.woff') format('woff'),
+        url('../fonts/averta/AvertaDemoPE-ExtraboldItalic.ttf') format('truetype');
+    font-weight: 800;
+    font-style: italic;
+}
+
+
+*{
+    box-sizing: border-box;
+}
+
+:root{
+
+    //colors
+    --main-color1: #002954;
+    --main-color1-light: #4c6285;
+    --main-color1-dark: #001638;
+    --main-color2: #00A82D;
+    --main-color2-light: #b2e4c0;
+    --text-color: #000918;
+    --text-color-light: #b2b7be;
+    --outline-grey: #f1f1f1;
+    --text-grey: #676767;
+    --card-gold: #f48c0f;
+    --card-gold-light: #fdf3e7;
+    --card-diamond: #58cc58;
+    --card-diamond-light: #eef9ee;
+    --card-premium: #d76f76;
+    --card-premium-light: #f3d3d5;
+    --card-starter: #74d2fb;
+    --card-starter-light: #e3f6fe;
+
+
+    //fonts
+    --mainFont: 'Averta Demo PE';
+
+}
+
+html, body{
+    font-family: var(--mainFont);
+    color: var(--text-color);
+}
+
+body.no-scroll{
+    overflow: hidden;
+}
+
+.flex{
+    display: flex;
+    flex-wrap: wrap;
+    
+    >*{
+        align-self: center;
+    }
+
+    &.no-ver-align{
+        >*{
+            align-self: unset;
+        }
+    }
+}
+
+.justify-between{
+    justify-content: space-between;
+}
+
+.justify-center{
+    justify-content: center;
+}
+
+.hide-mobile{
+    @include mobile-576{
+        display: none;
+    }
+}
+
+
+
+
+// custom bootstrap styles
+.card{
+	border: 0 ;
+	border-radius: 7px;
+	border: 2px solid var(--outline-grey);
+    overflow: hidden;
+
+    &.large-card{
+        width: 750px;
+
+        @include medium-tablet{
+            width: 100%;
+        }
+    }
+    
+    &.medium-card{
+        width: 600px;
+
+        @include medium-tablet{
+            width: 100%;
+        }
+    }
+
+    &.small-card{
+        width: 350px;
+
+        @include medium-tablet{
+            width: 100%;
+        }
+    }
+}
+
+.card-header{
+    //color: var(--text-color-light);
+	background: #fff;
+	border-bottom: 0;
+    padding: 15px;
+    font-weight: bold;
+}
+
+.form-control{
+    color: var(--text-grey);
+
+    &.large{
+        width: 550px;
+        @include medium-tablet{
+            width: 100%;
+        }
+    }
+
+    &.medium{
+        width: 400px;
+        @include medium-tablet{
+            width: 100%;
+        }
+    }
+
+    &.small{
+        width: 250px;
+        @include medium-tablet{
+            width: 100%;
+        }
+    }
+    
+}
+
+.alert{
+    width: 400px;
+    position: fixed;
+    right: 10px;
+    top: 20px;
+    z-index: 10;
+
+    @include mobile-576{
+        width: 300px;
+    }
+}
